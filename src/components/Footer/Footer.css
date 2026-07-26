@@ -1,0 +1,185 @@
+/* Footer Section Container */
+.footer-section {
+  background-color: #050507; /* Subtle background section separation */
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-20) 0 var(--spacing-8) 0;
+  color: var(--color-text-secondary);
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid Layout setup */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-10);
+  margin-bottom: var(--spacing-16);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+.brand-col {
+  gap: var(--spacing-6);
+}
+
+.footer-logo {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.footer-logo:hover {
+  color: var(--color-primary);
+}
+
+.footer-logo:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.brand-description {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Social links button alignments */
+.footer-socials {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.footer-social-link {
+  width: 40px; /* Enhanced tap targets (at least 40px) */
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  transition: all var(--transition-normal);
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.footer-social-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Column headers */
+.footer-col-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footer-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  display: inline-block;
+  padding: 2px 0; /* Comfortable vertical spacing for tap zone */
+}
+
+.footer-link:hover {
+  color: var(--color-text-primary);
+  padding-left: 2px;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.contact-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  display: inline-block;
+}
+
+/* --- BOTTOM FOOTER --- */
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.bottom-training-link {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+  padding: 4px 0;
+}
+
+.bottom-training-link:hover {
+  color: var(--color-accent);
+}
+
+.bottom-training-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet 768px (2-column layout) */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-12);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding-top: var(--spacing-16);
+  }
+}
+
+/* Mobile 360px Stack (Single-column layout) */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-4);
+  }
+  .footer-link {
+    padding: var(--spacing-2) 0; /* Expanded tap zone for mobile */
+  }
+}
